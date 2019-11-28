@@ -126,6 +126,11 @@ section {
     display: none;
 }
 
+.hide2 {
+    display: none;
+}
+
+
 #quem_somos #como_funciona,
 h1 {
     color: #60269E;
@@ -404,6 +409,6 @@ footer>a:hover {
     color: #fff;
 }
 
-.row{
+.row {
     width: 93vw;
 }
