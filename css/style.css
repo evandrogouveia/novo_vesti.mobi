@@ -247,7 +247,7 @@ h1 {
 }
 
 #nossos_clientes>section {
-    height: 60vw;
+    height: 50vw;
 }
 
 #nossos_clientes>article>h1 {
@@ -256,8 +256,9 @@ h1 {
 }
 
 .marcas {
-    width: 12vw;
-    height: 6vw;
+    max-width: 10vw;
+    min-height: 6vw;
+    max-height: 6vw;
     padding: 0 1vw 1vw 0;
     margin: 0 0.5vw 0 0.5vw;
 }
