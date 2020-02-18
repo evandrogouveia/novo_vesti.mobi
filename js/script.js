@@ -29,15 +29,37 @@ function marcas(pg) {
     var marcas = "";
     var start;
     var final;
+    var prefix;
     if (pg == 0) {
-        start = 1;
-        final = 54;
+        $("#back6").attr("src", "img/arrow1.svg");
+        $("#back6").attr("class", "btn_left1");
+        $("#back6").removeAttr("onclick");
+        $("#next6").attr("src", "img/arrow2.svg");
+        $("#next6").attr("class", "btn_right0 ativo");
+        $("#next6").attr("onclick", "marcas(1)");
+        start = 0;
+        final = 55;
+    } else if (pg == 1) {
+        $("#back6").attr("src", "img/arrow3.svg");
+        $("#back6").attr("class", "btn_left1 ativo");
+        $("#back6").attr("onclick", "marcas(0)");
+        $("#next6").attr("src", "img/arrow2.svg");
+        $("#next6").attr("class", "btn_right0 ativo");
+        $("#next6").attr("onclick", "marcas(2)");
+        start = 56;
+        final = 111;
     } else {
-        start = 55;
-        final = 73;
+        $("#back6").attr("onclick", "marcas(1)");
+        $("#next6").attr("src", "img/arrow1.svg");
+        $("#next6").attr("class", "btn_right0 rotate");
+        $("#next6").removeAttr("onclick");
+        start = 111;
+        final = 127;
     }
     for (i = start; i <= final; i++) {
-        marcas += "<img src='img/clientes/0" + i + ".svg' class='marcas'>";
+        prefix = i < 10 ? '00' : i < 100 ? "0" : "";
+        console.log(`prefix ${prefix}`);
+        marcas += "<img src='img/clientes/" + prefix + i + ".svg' class='marcas'>";
     }
     document.getElementById("marcas").innerHTML = marcas;
 }
@@ -112,28 +134,12 @@ $(document).ready(function () {
         $(".instagram").show()
     });
 
-    $("#next6").click(function () {
-        marcas(1);
-        $(".btn_left1").attr("src", "img/arrow3.svg");
-        $(".btn_left1").attr("class", "btn_left1 ativo");
-        $(".btn_right0").attr("src", "img/arrow1.svg");
-        $(".btn_right0").attr("class", "btn_right0 rotate");
-    });
-
-    $("#back6").click(function () {
-        marcas(0);
-        $(".btn_left1").attr("src", "img/arrow1.svg");
-        $(".btn_left1").attr("class", "btn_left1");
-        $(".btn_right0").attr("src", "img/arrow2.svg");
-        $(".btn_right0").attr("class", "btn_right0 ativo");
-    });
-
     $('#telefone').mask('(00) 00000-000#');
 
     $('body').on('focus', '.tel', function () {
         var maskBehavior = function (val) {
-                return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
-            },
+            return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+        },
             options = {
                 onKeyPress: function (val, e, field, options) {
                     field.mask(maskBehavior.apply({}, arguments), options);
