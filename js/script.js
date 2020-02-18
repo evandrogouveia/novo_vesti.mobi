@@ -31,7 +31,7 @@ var page1 = "";
 var page2 = "";
 
 function clientes() {
-    for (var i = 0; i <= 127; i++) {
+    for (var i = 0; i <= 126; i++) {
         prefix = i < 10 ? '00' : i < 100 ? "0" : "";
         console.log(`prefix ${prefix}`);
         if (i < 56) {
