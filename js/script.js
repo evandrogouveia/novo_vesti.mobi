@@ -25,11 +25,26 @@ const go = (elem) => {
     });
 }
 
+
+var page0 = "";
+var page1 = "";
+var page2 = "";
+
+function clientes() {
+    for (var i = 0; i <= 127; i++) {
+        prefix = i < 10 ? '00' : i < 100 ? "0" : "";
+        console.log(`prefix ${prefix}`);
+        if (i < 56) {
+            page0 += "<img src='img/clientes/" + prefix + i + ".svg' class='marcas'>";
+        } else if (i < 112) {
+            page1 += "<img src='img/clientes/" + prefix + i + ".svg' class='marcas'>";
+        } else {
+            page2 += "<img src='img/clientes/" + prefix + i + ".svg' class='marcas'>";
+        }
+    }
+}
+
 function marcas(pg) {
-    var marcas = "";
-    var start;
-    var final;
-    var prefix;
     if (pg == 0) {
         $("#back6").attr("src", "img/arrow1.svg");
         $("#back6").attr("class", "btn_left1");
@@ -37,8 +52,7 @@ function marcas(pg) {
         $("#next6").attr("src", "img/arrow2.svg");
         $("#next6").attr("class", "btn_right0 ativo");
         $("#next6").attr("onclick", "marcas(1)");
-        start = 0;
-        final = 55;
+        document.getElementById("marcas").innerHTML = page0;
     } else if (pg == 1) {
         $("#back6").attr("src", "img/arrow3.svg");
         $("#back6").attr("class", "btn_left1 ativo");
@@ -46,27 +60,22 @@ function marcas(pg) {
         $("#next6").attr("src", "img/arrow2.svg");
         $("#next6").attr("class", "btn_right0 ativo");
         $("#next6").attr("onclick", "marcas(2)");
-        start = 56;
-        final = 111;
+        document.getElementById("marcas").innerHTML = page1;
     } else {
         $("#back6").attr("onclick", "marcas(1)");
         $("#next6").attr("src", "img/arrow1.svg");
         $("#next6").attr("class", "btn_right0 rotate");
         $("#next6").removeAttr("onclick");
-        start = 111;
-        final = 127;
+        document.getElementById("marcas").innerHTML = page2;
     }
-    for (i = start; i <= final; i++) {
-        prefix = i < 10 ? '00' : i < 100 ? "0" : "";
-        console.log(`prefix ${prefix}`);
-        marcas += "<img src='img/clientes/" + prefix + i + ".svg' class='marcas'>";
-    }
-    document.getElementById("marcas").innerHTML = marcas;
+
 }
 
 $(document).ready(function () {
 
     detect_mobile();
+
+    clientes();
 
     marcas(0);
 
