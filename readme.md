@@ -9,7 +9,7 @@ Acessar o endereço: https://andjao.github.io/vesti
 -Ao clicar no texto Saiba mais ira direcionar para a seção "Como funciona?".<br>
 -Ao clicar nas setas da seção "Quem Somos" mudar de Titulo e paragrafos e setas estarem acesas ou apagadas conforme se há proximo texto ou anterior.<br>
 -Ao clicar nas setas da seção "Como Funciona" mudar de Titulo, paragrafos e imagem e setas estarem acesas ou apagadas conforme se há proximo texto ou anterior.<br>
--Ao clicar nas setas da seção "Nossos Clientes" mudar a lista de clientes e setas estarem acesas ou apagadas conforme se há proxima listagem ou anterior.<br>
+-Ao clicar nas setas da seção "Clientes" mudar a lista de clientes e setas estarem acesas ou apagadas conforme se há proxima listagem ou anterior.<br>
 -Ao colocar um dado incorreto nos campos da seção "Contato" deve exbir um alerta informando para corrigir o mesmo.<br>
 -Ao clicar no botão "Enviar" na seção "Contato" com os campos vazios, deve exbir um alerta informando para preencher os campos.<br>
 -Ao clicar no botão "Enviar" na seção "Contato" campos prenchidos, deve exbir um alerta informando que foi enviado com sucesso, e verificar se chegou um email de retorno na caixa de entrada do email que foi colocado no formulario.<br>
