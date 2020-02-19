@@ -5,6 +5,13 @@
     src: local('Graphik Regular'), url('../font/GraphikRegular.woff') format('woff');
 }
 
+@font-face {
+    font-family: 'Graphik-Black-Web';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Graphik Black'), url('../font/Graphik-Black-Web.woff') format('woff');
+}
+
 * {
     font-family: Graphik;
 }
@@ -272,6 +279,87 @@ h1 {
 
 .botoes1>img {
     width: 4vw;
+}
+
+/* Planos */
+#planos {
+    margin: 10vw 8vw 0 8vw;
+    background-color: #FCFCFC;
+}
+
+#planos>article {
+    background-color: #FFFFFF;
+    border: 1px solid #D6D6D6;
+    width: 24vw;
+    height: 40vw;
+    float: left;
+    padding: 3vw;
+    margin: 2.5vw;
+}
+
+#planos>article:first-of-type {
+    margin-left: 0;
+}
+
+#planos>article:last-of-type {
+    margin-right: 0;
+}
+
+#planos>article>h4 {
+    font-size: 2vw;
+    font-weight: bold;
+    color: #60269E;
+    text-align: center;
+    margin-bottom: 2.5vw;
+}
+
+.profissional {
+    font-family: Graphik-Black-Web;
+}
+
+#planos>article>p {
+    color: #555555;
+    font-size: 1.2vw;
+}
+
+#planos>article>p>img {
+    width: 1vw;
+    margin-right: 0.75vw;
+}
+
+.implantacao {
+    font-size: 1.25vw;
+    font-weight: bold;
+    color: #60269E;
+    position: absolute;
+    transform: translateX(12.5%);
+    bottom: 12vw;
+    text-align: center;
+}
+
+.implantacao>strong {
+    font-size: 1.5vw;
+    font-family: Graphik-Black-Web;
+}
+
+.implantacao2 {
+    bottom: 15vw;
+}
+
+.implantacao2>strong {
+    font-size: 1.6vw;
+}
+
+#planos>button {
+    transform: translate(-50%, -50%);
+    margin: 3vw 0 0 50%;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 2px solid #60269E;
+    opacity: 1;
+    padding:  0.9vw 3.5vw;
+    color: #60269E;
+    font-size: 1.7vw;
+    font-weight: bold;
 }
 
 /*contact*/

@@ -6,7 +6,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102040861-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
         gtag('config', 'UA-102040861-1');
@@ -37,6 +37,7 @@
             <a onclick="go('#como_funciona')">Como Funciona</a>
             <a onclick="go('#pontos_fortes')">Pontos Fortes</a>
             <a onclick="go('#nossos_clientes')">Clientes</a>
+            <a onclick="go('#planos')">Planos</a>
             <a onclick="go('#contact')">Contato</a>
             <a class="text-white login" href="https://v2.meuvesti.com/">Login</a>
         </nav>
@@ -54,6 +55,7 @@
                 <a onclick="go('#como_funciona')">Como Funciona</a>
                 <a onclick="go('#pontos_fortes')">Pontos Fortes</a>
                 <a onclick="go('#nossos_clientes')">Clientes</a>
+                <a onclick="go('#planos')">Planos</a>
                 <a onclick="go('#contact')">Contato</a>
                 <a class="text-white login" href="https://v2.meuvesti.com/">Login</a>
             </div>
@@ -188,6 +190,49 @@
         </section>
     </section>
 
+    <section id="planos">
+        <h1>Planos</h1>
+        <article>
+            <h4>Essencial</h4>
+            <p><img src="img/Fill 4.svg">Aplicativo para o vendedor</p>
+            <p><img src="img/Fill 4.svg">Catalogo com preço</p>
+            <p><img src="img/Fill 4.svg">Catalogo sem preço</p>
+            <p><img src="img/Fill 4.svg">Hospedagem do ambiente</p>
+            <p><img src="img/Fill 4.svg">Capacitação da equipe</p>
+            <p><img src="img/Fill 4.svg">Suporte remoto ilimitado</p>
+            <p><img src="img/Fill 4.svg">30 pedidos</p>
+            <aside class="implantacao">
+                <p>Implantação</p>
+                <p>R$ 2.000,00 inicial</p>
+                <strong>R$ 199,00 mensais</strong>
+            </aside>
+        </article>
+        <article>
+            <h4>Avançado</h4>
+            <p><img src="img/Fill 4.svg">Todos os itens do Essencial</p>
+            <p><img src="img/Fill 4.svg">Leilão de frete</p>
+            <p><img src="img/Fill 4.svg">Gateway de pagamentos</p>
+            <p><img src="img/Fill 4.svg">60 pedidos</p>
+            <aside class="implantacao">
+                <p>Implantação</p>
+                <p>R$ 2.000,00 inicial</p>
+                <strong>R$ 299,00 mensais</strong>
+            </aside>
+        </article>
+        <article>
+            <h4 class="profissional">Profissional</h4>
+            <p><img src="img/Fill 4.svg">Todos os itens do Avançado</p>
+            <p><img src="img/Fill 4.svg">Aplicativo da sua marca</p>
+            <p><img src="img/Fill 4.svg">Integração com seu sistema</p>
+            <p><img src="img/Fill 4.svg">Multi filiais</p>
+            <p><img src="img/Fill 4.svg">150 pedidos</p>
+            <aside class="implantacao implantacao2">
+                <strong>Preço sob consulta</strong>
+            </aside>
+        </article>
+        <button>Fale Conosco</button>
+    </section>
+
     <section id="contact">
         <article>
             <h1>Contato</h1>
@@ -234,7 +279,7 @@
                 (dominio.search(" ") == -1) &&
                 (dominio.search(".") != -1) &&
                 (dominio.indexOf(".") >= 1) &&
-                (dominio.lastIndexOf(".") < dominio.length - 1)) {} else {
+                (dominio.lastIndexOf(".") < dominio.length - 1)) { } else {
                 alert("E-mail invalido");
             }
         }
