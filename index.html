@@ -248,9 +248,9 @@
                     <form id="form-contato2" method='post' name="f0">
                         <input type="text" placeholder="Nome" class="name2" name="name" id="name2" required>
                         <input type="email" placeholder="Email" class="email2" name="email" id="email2" required
-                            onblur="validacaoEmail(f0.email)">
+                            onblur="validacaoEmail(f0.email2)">
                         <input type="text" placeholder="Celular" class="tel2" name="phone" id="telefone2" required>
-                        <input type="text" placeholder="Empresa" class="company" name="company" id="company" required>
+                        <input type="text" placeholder="Empresa" class="company" name="message" id="company" required>
                     </form>
                 </div>
                 <div>
@@ -313,13 +313,12 @@
         }
 
         function enviar(modal) {
-
+            test = modal ? `Modal ${$("#form-contato2").serialize()}` : `Contato ${$("#form-contato").serialize()}`
+            test.message
             var name = modal ? $('#name2').val() : $('#name').val();
             var email = modal ? $('#email2').val() : $('#email').val();
             var telefone = modal ? $('#telefone2').val() : $('#telefone').val();
-            var message = modal ? "" : $('#message').val();
-            var company = modal ? $('#company').val() : "";
-
+            var message = modal ? $('#company').val() : $('#message').val();
             if (name === "") {
                 alert('Para enviar o contato, favor preencher o campo nome.');
                 modal ? $('#name2').focus() : $('#name').focus();
@@ -329,14 +328,11 @@
             } else if (telefone === "") {
                 alert('Para enviar o contato, favor preencher o campo telefone.');
                 modal ? $('#telefone2').focus() : $('#telefone').focus();
-            } else if (!modal && message === "") {
-                alert('Para enviar o contato, favor preencher o campo de mensagem.');
-                $('#message').focus();
-            } else if (modal && company === "") {
-                alert('Para enviar o contato, favor preencher o campo de empresa.');
-                $('#company').focus();
-
+            } else if (message === "") {
+                alert(`Para enviar o contato, favor preencher o campo de ${modal ? 'empresa':'mensagem'}.`);
+                modal ? $('#company').focus() : $('#message').focus();
             } else {
+                $('#company').val(modal ? `Empresa: ${$('#company').val()}` : $('#company').val())
                 $.ajax({
                     type: 'POST',
                     dataType: 'json',
