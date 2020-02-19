@@ -356,7 +356,7 @@ h1 {
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 2px solid #60269E;
     opacity: 1;
-    padding:  0.9vw 3.5vw;
+    padding: 0.9vw 3.5vw;
     color: #60269E;
     font-size: 1.7vw;
     font-weight: bold;
@@ -384,6 +384,10 @@ h1 {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+}
+
+input {
+    font-size: 1.2vw;
 }
 
 ::-webkit-input-placeholder {
@@ -500,4 +504,41 @@ footer>a:hover {
 
 .row {
     width: 93vw;
+}
+
+/* Modal */
+.close {
+    width: 1.5vw;
+}
+
+.fale_conosco {
+    background-color: #fff;
+    max-width: 80%;
+}
+
+.fale_conosco>div {
+    padding: 2vw;
+}
+
+.modal-content>div>p {
+    color: #555555;
+    font-size: 1.5vw;
+}
+
+#form-contato2>input {
+    margin: 0 0 1.5vw 0;
+    background-color: #F9F9F9;
+    border: none;
+    padding: 1vw 0.5vw;
+    border-radius: 5px;
+}
+
+.name2,
+.company {
+    width: 100%;
+}
+
+.email2,
+.tel2 {
+    width: 49.7%;
 }

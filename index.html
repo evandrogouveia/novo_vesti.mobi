@@ -6,7 +6,10 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102040861-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
         gtag('config', 'UA-102040861-1');
@@ -230,8 +233,33 @@
                 <strong>Preço sob consulta</strong>
             </aside>
         </article>
-        <button>Fale Conosco</button>
+        <button data-toggle="modal" data-target="#fale_conosco">Fale Conosco</button>
     </section>
+
+    <div class="modal fade" id="fale_conosco" role="dialog">
+        <div class="modal-dialog fale_conosco">
+            <div class="modal-content">
+                <div>
+                    <button type="button" class="close" data-dismiss="modal"><img src="img/close2.svg"
+                            class="close"></img></button>
+                    <p>Quer conhecer nossos planos? Envie-nos uma mensagem.</p>
+                </div>
+                <div>
+                    <form id="form-contato2" method='post' name="f0">
+                        <input type="text" placeholder="Nome" class="name2" name="name" id="name2" required>
+                        <input type="email" placeholder="Email" class="email2" name="email" id="email2" required
+                            onblur="validacaoEmail(f0.email)">
+                        <input type="text" placeholder="Celular" class="tel2" name="phone" id="telefone2" required>
+                        <input type="text" placeholder="Empresa" class="company" name="company" id="company" required>
+                    </form>
+                </div>
+                <div>
+                    <input type="submit" value="Enviar" class="send" name="send" onclick="enviar(true)">
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     <section id="contact">
         <article>
@@ -245,7 +273,7 @@
             <input type="text" placeholder="Telefone" class="tel" name="phone" id="telefone" required>
             <textarea placeholder="Mensagem" class="message" name="message" id="message"></textarea>
         </form>
-        <input type="submit" value="Enviar" class="send" name="send">
+        <input type="submit" value="Enviar" class="send" name="send" onclick="enviar(false)">
     </section>
 
     <footer>
@@ -279,40 +307,47 @@
                 (dominio.search(" ") == -1) &&
                 (dominio.search(".") != -1) &&
                 (dominio.indexOf(".") >= 1) &&
-                (dominio.lastIndexOf(".") < dominio.length - 1)) { } else {
+                (dominio.lastIndexOf(".") < dominio.length - 1)) {} else {
                 alert("E-mail invalido");
             }
         }
-        $(document).on('click', '.send', function () {
 
-            var name = $('#name').val();
-            var email = $('#email').val();
-            var telefone = $('#telefone').val();
-            var message = $('#message').val();
+        function enviar(modal) {
+
+            var name = modal ? $('#name2').val() : $('#name').val();
+            var email = modal ? $('#email2').val() : $('#email').val();
+            var telefone = modal ? $('#telefone2').val() : $('#telefone').val();
+            var message = modal ? "" : $('#message').val();
+            var company = modal ? $('#company').val() : "";
 
             if (name === "") {
                 alert('Para enviar o contato, favor preencher o campo nome.');
-                $('#name').focus();
+                modal ? $('#name2').focus() : $('#name').focus();
             } else if (email === "") {
                 alert('Para enviar o contato, favor preencher o campo email.');
-                $('#email').focus();
+                modal ? $('#email2').focus() : $('#email').focus();
             } else if (telefone === "") {
                 alert('Para enviar o contato, favor preencher o campo telefone.');
-                $('#telefone').focus();
-            } else if (message === "") {
+                modal ? $('#telefone2').focus() : $('#telefone').focus();
+            } else if (!modal && message === "") {
                 alert('Para enviar o contato, favor preencher o campo de mensagem.');
                 $('#message').focus();
+            } else if (modal && company === "") {
+                alert('Para enviar o contato, favor preencher o campo de empresa.');
+                $('#company').focus();
+
             } else {
                 $.ajax({
                     type: 'POST',
                     dataType: 'json',
                     url: 'https://hapi.meuvesti.com/api/appvendas/send_email',
                     async: false,
-                    data: $("#form-contato").serialize(),
+                    data: modal ? $("#form-contato2").serialize() : $("#form-contato").serialize(),
                     success: function (data) {
                         if (data.success === true) {
                             alert('Mensagem enviada com sucesso!');
-                            $("#form-contato").trigger('reset');
+                            modal ? $("#form-contato2").trigger('reset') : $("#form-contato").trigger(
+                                'reset');
                             return true;
                         }
                     },
@@ -322,7 +357,7 @@
                     }
                 });
             }
-        });
+        };
     </script>
 </body>
 
