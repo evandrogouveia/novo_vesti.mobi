@@ -339,6 +339,127 @@ h1 {
     width: 10vw;
 }
 
+/* Planos */
+.hide3 {
+    display: none;
+}
+
+#planos {
+    margin: 10vw 8vw 0 8vw;
+    background-color: #FCFCFC;
+}
+
+#planos>h1 {
+    font-size: 6.75vw;
+}
+
+#planos>article {
+    background-color: #FFFFFF;
+    border: 1px solid #D6D6D6;
+    height: 60vw;
+    padding: 3vw;
+}
+
+#planos>article:first-of-type {
+    margin-left: 0;
+}
+
+#planos>article:last-of-type {
+    margin-right: 0;
+}
+
+#planos>article>h4 {
+    font-size: 5vw;
+    font-weight: bold;
+    color: #60269E;
+    text-align: center;
+    margin-bottom: 2.5vw;
+}
+
+.profissional {
+    font-family: Graphik-Black-Web;
+}
+
+#planos>article>p {
+    color: #555555;
+    font-size: 1.2vw;
+}
+
+#planos>article>p>img {
+    width: 1vw;
+    margin-right: 0.75vw;
+}
+
+.implantacao {
+    font-size: 1.25vw;
+    font-weight: bold;
+    color: #60269E;
+    position: absolute;
+    transform: translateX(12.5%);
+    bottom: 12vw;
+    text-align: center;
+}
+
+.implantacao>strong {
+    font-size: 1.5vw;
+    font-family: Graphik-Black-Web;
+}
+
+.implantacao2 {
+    bottom: 15vw;
+}
+
+.implantacao2>strong {
+    font-size: 1.6vw;
+}
+
+#planos>button {
+    transform: translate(-50%, -50%);
+    margin: 3vw 0 0 50%;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 2px solid #60269E;
+    opacity: 1;
+    padding: 0.9vw 3.5vw;
+    color: #60269E;
+    font-size: 1.7vw;
+    font-weight: bold;
+}
+
+/* Modal */
+.close {
+    width: 5vw;
+}
+
+.fale_conosco {
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.fale_conosco>div {
+    padding: 5vw;
+}
+
+.modal-content>div>p {
+    color: #555555;
+    font-size: 4vw;
+    margin-top: 10vw;
+    width: 70vw;
+}
+
+#form-contato2>input {
+    margin: 0 0 1.5vw 0;
+    background-color: #F9F9F9;
+    border: none;
+    padding: 3vw 3vw;
+}
+
+.name2,
+.company,
+.email2,
+.tel2 {
+    width: 100%;
+}
+
 /*contato*/
 #contact {
     width: 90vw;
@@ -388,7 +509,7 @@ textarea {
     float: right;
     background-color: #fff;
     border: 0.5vw solid #60269E;
-    padding: 1vw 2.5vw;
+    padding: 1vw 5vw;
     color: #60269E;
     font-weight: bold;
     font-size: 5vw;
