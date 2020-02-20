@@ -32,7 +32,7 @@ var page1 = "";
 var page2 = "";
 
 function clientes() {
-    for (var i = 0; i <= 126; i++) {
+    for (var i = 0; i <= 125; i++) {
         prefix = i < 10 ? '00' : i < 100 ? "0" : "";
         if (i < 56) {
             page0 += "<img src='img/clientes/" + prefix + i + ".svg' class='marcas'>";
