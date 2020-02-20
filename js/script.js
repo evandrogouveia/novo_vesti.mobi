@@ -9,6 +9,7 @@ function detect_mobile() {
     ) {
         $("#css").attr("href", "css/mobile.css");
         $(".top1").attr("class", "navbar navbar-light fixed-top bg-white");
+        planos(0)
     } else {
         $("#css").attr("href", "css/style.css");
         $(".top0").attr("class", "navbar navbar-light bg-white");
@@ -25,26 +26,88 @@ const go = (elem) => {
     });
 }
 
+
+var page0 = "";
+var page1 = "";
+var page2 = "";
+
+function clientes() {
+    for (var i = 0; i <= 125; i++) {
+        prefix = i < 10 ? '00' : i < 100 ? "0" : "";
+        if (i < 56) {
+            page0 += "<img src='img/clientes/" + prefix + i + ".svg' class='marcas'>";
+        } else if (i < 112) {
+            page1 += "<img src='img/clientes/" + prefix + i + ".svg' class='marcas'>";
+        } else {
+            page2 += "<img src='img/clientes/" + prefix + i + ".svg' class='marcas'>";
+        }
+    }
+}
+
 function marcas(pg) {
-    var marcas = "";
-    var start;
-    var final;
     if (pg == 0) {
-        start = 1;
-        final = 54;
+        document.getElementById("marcas").innerHTML = page0;
+        $("#back6").attr("src", "img/arrow1.svg");
+        $("#back6").attr("class", "btn_left1");
+        $("#back6").removeAttr("onclick");
+        $("#next6").attr("src", "img/arrow2.svg");
+        $("#next6").attr("class", "btn_right0 ativo");
+        $("#next6").attr("onclick", "marcas(1)");
+    } else if (pg == 1) {
+        document.getElementById("marcas").innerHTML = page1;
+        $("#back6").attr("src", "img/arrow3.svg");
+        $("#back6").attr("class", "btn_left1 ativo");
+        $("#back6").attr("onclick", "marcas(0)");
+        $("#next6").attr("src", "img/arrow2.svg");
+        $("#next6").attr("class", "btn_right0 ativo");
+        $("#next6").attr("onclick", "marcas(2)");
     } else {
-        start = 55;
-        final = 73;
+        document.getElementById("marcas").innerHTML = page2;
+        $("#next6").attr("src", "img/arrow1.svg");
+        $("#next6").attr("class", "btn_right0 rotate");
+        $("#back6").attr("onclick", "marcas(1)");
+        $("#next6").removeAttr("onclick");
     }
-    for (i = start; i <= final; i++) {
-        marcas += "<img src='img/clientes/0" + i + ".svg' class='marcas'>";
+
+}
+
+function planos(pg) {
+    if (pg == 0) {
+        $("#essencial").attr("style", "display: show");
+        $("#avancado").attr("style", "display: none");
+        $("#profissional").attr("style", "display: none");
+        $("#back7").attr("src", "img/arrow1.svg");
+        $("#back7").attr("class", "btn_left1");
+        $("#back7").removeAttr("onclick");
+        $("#next7").attr("src", "img/arrow2.svg");
+        $("#next7").attr("class", "btn_right0 ativo");
+        $("#next7").attr("onclick", "planos(1)");
+    } else if (pg == 1) {
+        $("#essencial").attr("style", "display: none");
+        $("#avancado").attr("style", "display: show");
+        $("#profissional").attr("style", "display: none");
+        $("#back7").attr("src", "img/arrow3.svg");
+        $("#back7").attr("class", "btn_left1 ativo");
+        $("#back7").attr("onclick", "planos(0)");
+        $("#next7").attr("src", "img/arrow2.svg");
+        $("#next7").attr("class", "btn_right0 ativo");
+        $("#next7").attr("onclick", "planos(2)");
+    } else {
+        $("#essencial").attr("style", "display: none");
+        $("#avancado").attr("style", "display: none");
+        $("#profissional").attr("style", "display: show");
+        $("#next7").attr("src", "img/arrow1.svg");
+        $("#next7").attr("class", "btn_right0 rotate");
+        $("#back7").attr("onclick", "planos(1)");
+        $("#next7").removeAttr("onclick");
     }
-    document.getElementById("marcas").innerHTML = marcas;
 }
 
 $(document).ready(function () {
 
     detect_mobile();
+
+    clientes();
 
     marcas(0);
 
@@ -112,28 +175,13 @@ $(document).ready(function () {
         $(".instagram").show()
     });
 
-    $("#next6").click(function () {
-        marcas(1);
-        $(".btn_left1").attr("src", "img/arrow3.svg");
-        $(".btn_left1").attr("class", "btn_left1 ativo");
-        $(".btn_right0").attr("src", "img/arrow1.svg");
-        $(".btn_right0").attr("class", "btn_right0 rotate");
-    });
-
-    $("#back6").click(function () {
-        marcas(0);
-        $(".btn_left1").attr("src", "img/arrow1.svg");
-        $(".btn_left1").attr("class", "btn_left1");
-        $(".btn_right0").attr("src", "img/arrow2.svg");
-        $(".btn_right0").attr("class", "btn_right0 ativo");
-    });
-
     $('#telefone').mask('(00) 00000-000#');
+    $('#telefone2').mask('(00) 00000-000#');
 
-    $('body').on('focus', '.tel', function () {
+    $('body').on('focus', '.numero', function () {
         var maskBehavior = function (val) {
-                return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
-            },
+            return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+        },
             options = {
                 onKeyPress: function (val, e, field, options) {
                     field.mask(maskBehavior.apply({}, arguments), options);

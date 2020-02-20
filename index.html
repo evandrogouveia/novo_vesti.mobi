@@ -6,7 +6,10 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102040861-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
         gtag('config', 'UA-102040861-1');
@@ -36,7 +39,8 @@
             <a onclick="go('#quem_somos')">Quem somos</a>
             <a onclick="go('#como_funciona')">Como Funciona</a>
             <a onclick="go('#pontos_fortes')">Pontos Fortes</a>
-            <a onclick="go('#nossos_clientes')">Nossos Clientes</a>
+            <a onclick="go('#nossos_clientes')">Clientes</a>
+            <a onclick="go('#planos')">Planos</a>
             <a onclick="go('#contact')">Contato</a>
             <a class="text-white login" href="https://v2.meuvesti.com/">Login</a>
         </nav>
@@ -47,13 +51,14 @@
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                 aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="my-1 mx-2 close"><img src="img/close.svg"></span>
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon sanduiche"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <a onclick="go('#quem_somos')">Quem somos</a>
                 <a onclick="go('#como_funciona')">Como Funciona</a>
                 <a onclick="go('#pontos_fortes')">Pontos Fortes</a>
-                <a onclick="go('#nossos_clientes')">Nossos Clientes</a>
+                <a onclick="go('#nossos_clientes')">Clientes</a>
+                <a onclick="go('#planos')">Planos</a>
                 <a onclick="go('#contact')">Contato</a>
                 <a class="text-white login" href="https://v2.meuvesti.com/">Login</a>
             </div>
@@ -177,16 +182,88 @@
 
     <section id="nossos_clientes">
         <article>
-            <h1>Nossos clientes</h1>
+            <h1>Clientes</h1>
         </article>
         <section>
             <div id="marcas"></div>
             <div class="botoes1">
-                <img src="img/arrow1.svg" id="back6" class="btn_left1">
-                <img src="img/arrow2.svg" id="next6" class="ativo btn_right0">
+                <img id="back6">
+                <img id="next6">
             </div>
         </section>
     </section>
+
+    <section id="planos">
+        <h1>Planos</h1>
+        <article id="essencial">
+            <h4>Essencial</h4>
+            <p><img src="img/Fill 4.svg">Aplicativo para o vendedor</p>
+            <p><img src="img/Fill 4.svg">Catálogo com preço</p>
+            <p><img src="img/Fill 4.svg">Catálogo sem preço</p>
+            <p><img src="img/Fill 4.svg">Hospedagem do ambiente</p>
+            <p><img src="img/Fill 4.svg">Capacitação da equipe</p>
+            <p><img src="img/Fill 4.svg">Suporte remoto ilimitado</p>
+            <p><img src="img/Fill 4.svg">30 pedidos</p>
+            <aside class="implantacao">
+                <p>Implantação</p>
+                <p>R$ 2.000,00 inicial</p>
+                <strong>R$ 199,00 mensais</strong>
+            </aside>
+        </article>
+        <article id="avancado">
+            <h4>Avançado</h4>
+            <p><img src="img/Fill 4.svg">Todos os itens do Essencial</p>
+            <p><img src="img/Fill 4.svg">Leilão de frete</p>
+            <p><img src="img/Fill 4.svg">Gateway de pagamentos</p>
+            <p><img src="img/Fill 4.svg">60 pedidos</p>
+            <aside class="implantacao">
+                <p>Implantação</p>
+                <p>R$ 2.000,00 inicial</p>
+                <strong>R$ 299,00 mensais</strong>
+            </aside>
+        </article>
+        <article id="profissional">
+            <h4 class="profissional">Profissional</h4>
+            <p><img src="img/Fill 4.svg">Todos os itens do Avançado</p>
+            <p><img src="img/Fill 4.svg">Aplicativo da sua marca</p>
+            <p><img src="img/Fill 4.svg">Integração com seu sistema</p>
+            <p><img src="img/Fill 4.svg">Multi filiais</p>
+            <p><img src="img/Fill 4.svg">150 pedidos</p>
+            <aside class="implantacao implantacao2">
+                <strong>Preço sob consulta</strong>
+            </aside>
+        </article>
+        <div class="botoes2">
+            <img id="back7">
+            <img id="next7">
+        </div>
+        <button data-toggle="modal" data-target="#fale_conosco">Fale Conosco</button>
+    </section>
+
+    <div class="modal fade" id="fale_conosco" role="dialog">
+        <div class="modal-dialog fale_conosco">
+            <div class="modal-content">
+                <div>
+                    <button type="button" class="close" data-dismiss="modal"><img src="img/close2.svg"
+                            class="close"></img></button>
+                    <p>Quer conhecer nossos planos? Envie-nos uma mensagem.</p>
+                </div>
+                <div>
+                    <form id="form-contato2" method='post' name="f0">
+                        <input type="text" placeholder="Nome" class="name2" name="name" id="name2" required>
+                        <input type="email" placeholder="Email" class="email2" name="email" id="email2" required
+                            onblur="validacaoEmail(f0.email2)">
+                        <input type="text" placeholder="Celular" class="tel2 numero" name="phone" id="telefone2" required>
+                        <input type="text" placeholder="Empresa" class="company" name="message" id="company" required>
+                    </form>
+                </div>
+                <div>
+                    <input type="submit" value="Enviar" class="send" name="send" onclick="enviar(true)">
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     <section id="contact">
         <article>
@@ -197,10 +274,10 @@
             <input type="text" placeholder="Nome" class="name" name="name" id="name" required>
             <input type="email" placeholder="Email" class="email" name="email" id="email" required
                 onblur="validacaoEmail(f0.email)">
-            <input type="text" placeholder="Telefone" class="tel" name="phone" id="telefone" required>
+            <input type="text" placeholder="Telefone" class="tel numero" name="phone" id="telefone" required>
             <textarea placeholder="Mensagem" class="message" name="message" id="message"></textarea>
         </form>
-        <input type="submit" value="Enviar" class="send" name="send">
+        <input type="submit" value="Enviar" class="send" name="send" onclick="enviar(false)">
     </section>
 
     <footer>
@@ -238,36 +315,40 @@
                 alert("E-mail invalido");
             }
         }
-        $(document).on('click', '.send', function () {
 
-            var name = $('#name').val();
-            var email = $('#email').val();
-            var telefone = $('#telefone').val();
-            var message = $('#message').val();
-
+        function enviar(modal) {
+            test = modal ? `Modal ${$("#form-contato2").serialize()}` : `Contato ${$("#form-contato").serialize()}`
+            test.message
+            var name = modal ? $('#name2').val() : $('#name').val();
+            var email = modal ? $('#email2').val() : $('#email').val();
+            var telefone = modal ? $('#telefone2').val() : $('#telefone').val();
+            var message = modal ? $('#company').val() : $('#message').val();
             if (name === "") {
                 alert('Para enviar o contato, favor preencher o campo nome.');
-                $('#name').focus();
+                modal ? $('#name2').focus() : $('#name').focus();
             } else if (email === "") {
                 alert('Para enviar o contato, favor preencher o campo email.');
-                $('#email').focus();
+                modal ? $('#email2').focus() : $('#email').focus();
             } else if (telefone === "") {
                 alert('Para enviar o contato, favor preencher o campo telefone.');
-                $('#telefone').focus();
+                modal ? $('#telefone2').focus() : $('#telefone').focus();
             } else if (message === "") {
-                alert('Para enviar o contato, favor preencher o campo de mensagem.');
-                $('#message').focus();
+                alert(`Para enviar o contato, favor preencher o campo de ${modal ? 'empresa':'mensagem'}.`);
+                modal ? $('#company').focus() : $('#message').focus();
             } else {
+                $('#company').val(modal ? `Empresa: ${$('#company').val()}` : $('#company').val())
                 $.ajax({
                     type: 'POST',
                     dataType: 'json',
                     url: 'https://hapi.meuvesti.com/api/appvendas/send_email',
                     async: false,
-                    data: $("#form-contato").serialize(),
+                    data: modal ? $("#form-contato2").serialize() : $("#form-contato").serialize(),
                     success: function (data) {
                         if (data.success === true) {
+                            $('.modal').modal('hide');
                             alert('Mensagem enviada com sucesso!');
-                            $("#form-contato").trigger('reset');
+                            modal ? $("#form-contato2").trigger('reset') : $("#form-contato").trigger(
+                                'reset');
                             return true;
                         }
                     },
@@ -277,7 +358,7 @@
                     }
                 });
             }
-        });
+        };
     </script>
 </body>
 
