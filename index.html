@@ -345,6 +345,7 @@
                     data: modal ? $("#form-contato2").serialize() : $("#form-contato").serialize(),
                     success: function (data) {
                         if (data.success === true) {
+                            $('.modal').modal('hide');
                             alert('Mensagem enviada com sucesso!');
                             modal ? $("#form-contato2").trigger('reset') : $("#form-contato").trigger(
                                 'reset');
