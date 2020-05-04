@@ -29,16 +29,8 @@ p {
     color: #555555;
 }
 
-/*Whatsapp*/
-
-.whats {
-    position: fixed;
-    z-index: 1;
-    right: 0;
-    top: 45%;
-}
-
-.top0, .top1 {
+.top0,
+.top1 {
     display: none;
 }
 
@@ -88,11 +80,13 @@ nav>div>a {
     display: inline;
 }
 
-.sanduiche   {
+.sanduiche {
     width: 8vw;
-    height: 8vw;}
+    height: 8vw;
+}
 
-.navbar-toggler.collapsed>.close, .navbar-toggler:not(.collapsed)>.navbar-toggler-icon {
+.navbar-toggler.collapsed>.close,
+.navbar-toggler:not(.collapsed)>.navbar-toggler-icon {
     display: none;
 }
 
@@ -190,7 +184,8 @@ br {
     display: none;
 }
 
-#quem_somos #como_funciona, h1 {
+#quem_somos #como_funciona,
+h1 {
     color: #60269E;
     font-weight: bold;
 }
@@ -205,7 +200,8 @@ br {
     width: 10vw;
 }
 
-.btn_left0, .btn_left1 {
+.btn_left0,
+.btn_left1 {
     margin-right: 2vw;
 }
 
@@ -448,6 +444,10 @@ br {
 
 /* Modal */
 
+iframe {
+    height: 170vh !important;
+}
+
 .close {
     width: 5vw;
 }
@@ -475,7 +475,10 @@ br {
     padding: 3vw 3vw;
 }
 
-.name2, .company, .email2, .tel2 {
+.name2,
+.company,
+.email2,
+.tel2 {
     width: 100%;
 }
 
@@ -506,14 +509,18 @@ br {
     font-size: 4vw;
 }
 
-#contact>form>input, textarea {
+#contact>form>input,
+textarea {
     margin: 0 0 1.5vw 0;
     background-color: #F9F9F9;
     border: none;
     padding: 2vw 3vw;
 }
 
-.name, .message, .email, .tel {
+.name,
+.message,
+.email,
+.tel {
     width: 100%;
 }
 

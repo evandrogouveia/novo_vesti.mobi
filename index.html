@@ -41,8 +41,6 @@
             style="display:none;visibility:hidden">
         </iframe>
     </noscript>
-    <a href="https://api.whatsapp.com/send?phone=5511940305684" target="_blank" class="whats"><img
-            src="img/icone_whatsapp.svg" class="img0"></a>
     <header>
         <nav class="navbar navbar-light top0">
             <a>
@@ -249,7 +247,7 @@
             <img id="back7">
             <img id="next7">
         </div>
-        <button data-toggle="modal" data-target="#fale_conosco">Fale Conosco</button>
+        <button data-toggle="modal" data-target="#fale_conosco">Tenho interesse</button>
     </section>
 
     <div class="modal fade" id="fale_conosco" role="dialog">
@@ -258,23 +256,14 @@
                 <div>
                     <button type="button" class="close" data-dismiss="modal"><img src="img/close2.svg"
                             class="close"></img></button>
-                    <p>Quer conhecer nossos planos? Envie-nos uma mensagem.</p>
                 </div>
                 <div>
-                    <form id="form-contato2" method='post' name="f0">
-                        <input type="text" placeholder="Nome" class="name2" name="name" id="name2" required>
-                        <input type="email" placeholder="Email" class="email2" name="email" id="email2" required
-                            onblur="validacaoEmail(f0.email2)">
-                        <input type="text" placeholder="Celular" class="tel2 numero" name="phone" id="telefone2"
-                            required>
-                        <input type="text" placeholder="Empresa" class="company" name="message" id="company" required>
-                    </form>
-                </div>
-                <div>
-                    <input type="submit" value="Enviar" class="send" name="send" onclick="enviar(true)">
+                    <div class="pipedriveWebForms"
+                        data-pd-webforms="https://pipedrivewebforms.com/form/6d3e946d57c2df185a3b4224bb1fed667502339">
+                        <script src="https://cdn.pipedriveassets.com/web-form-assets/webforms.min.js"></script>
+                    </div>
                 </div>
             </div>
-
         </div>
     </div>
 
