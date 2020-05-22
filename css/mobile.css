@@ -444,10 +444,6 @@ h1 {
 
 /* Modal */
 
-iframe {
-    height: 170vh !important;
-}
-
 .close {
     width: 5vw;
 }
