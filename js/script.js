@@ -1,3 +1,8 @@
+/*
+ * Marchi developments
+ * @create date 2019-11-14
+ */
+
 function detect_mobile() {
     if (navigator.userAgent.match(/Android/i) ||
         navigator.userAgent.match(/webOS/i) ||
@@ -180,8 +185,8 @@ $(document).ready(function () {
 
     $('body').on('focus', '.numero', function () {
         var maskBehavior = function (val) {
-            return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
-        },
+                return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+            },
             options = {
                 onKeyPress: function (val, e, field, options) {
                     field.mask(maskBehavior.apply({}, arguments), options);
