@@ -2,9 +2,12 @@
 <html lang="pt-br">
 
 <head>
+    <meta name="author" content="Marchi Developments">
+    <meta name="DC.date.created" content="2019-11-14">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102040861-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
+
         function gtag() {
             dataLayer.push(arguments);
         }
@@ -12,13 +15,20 @@
         gtag('config', 'UA-102040861-1');
     </script>
 
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-T7QTK97');
     </script>
 
@@ -248,30 +258,30 @@
             <img id="back7">
             <img id="next7">
         </div>
-        <button data-toggle="modal" data-target="#fale_conosco">Tenho interesse</button>
-    </section>
+        <script id="bx24_form_button" data-skip-moving="true">
+            (function (w, d, u, b) {
+                w['Bitrix24FormObject'] = b;
+                w[b] = w[b] || function () {
+                    arguments[0].ref = u;
+                    (w[b].forms = w[b].forms || []).push(arguments[0])
+                };
+                if (w[b]['forms']) return;
+                var s = d.createElement('script');
+                s.async = 1;
+                s.src = u + '?' + (1 * new Date());
+                var h = d.getElementsByTagName('script')[0];
+                h.parentNode.insertBefore(s, h);
+            })(window, document, 'https://vesti.bitrix24.com.br/bitrix/js/crm/form_loader.js', 'b24form');
 
-    <div class="modal fade" id="fale_conosco" role="dialog">
-        <div class="modal-dialog fale_conosco">
-            <div class="modal-content">
-                <div>
-                    <button type="button" class="close" data-dismiss="modal"><img src="img/close2.svg"
-                            class="close"></img></button>
-                </div>
-                <div>
-                    <script id="bx24_form_inline" data-skip-moving="true">
-                        (function(w,d,u,b){w['Bitrix24FormObject']=b;w[b] = w[b] || function(){arguments[0].ref=u;
-                                (w[b].forms=w[b].forms||[]).push(arguments[0])};
-                                if(w[b]['forms']) return;
-                                var s=d.createElement('script');s.async=1;s.src=u+'?'+(1*new Date());
-                                var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
-                        })(window,document,'https://vesti.bitrix24.com.br/bitrix/js/crm/form_loader.js','b24form');
-                        b24form({"id":"5","lang":"br","sec":"2zpxuu","type":"inline"});
-                    </script>
-                </div>
-            </div>
-        </div>
-    </div>
+            b24form({
+                "id": "5",
+                "lang": "br",
+                "sec": "2zpxuu",
+                "type": "button",
+                "click": ""
+            });
+        </script><button class="b24-web-form-popup-btn-5">Tenho interesse</button>
+    </section>
 
     <section id="contact">
         <article>
@@ -319,7 +329,7 @@
                 (dominio.search(" ") == -1) &&
                 (dominio.search(".") != -1) &&
                 (dominio.indexOf(".") >= 1) &&
-                (dominio.lastIndexOf(".") < dominio.length - 1)) { } else {
+                (dominio.lastIndexOf(".") < dominio.length - 1)) {} else {
                 alert("E-mail invalido");
             }
         }
