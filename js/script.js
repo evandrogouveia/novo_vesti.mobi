@@ -35,16 +35,19 @@ const go = (elem) => {
 var page0 = "";
 var page1 = "";
 var page2 = "";
+var page3 = "";
 
 function clientes() {
-    for (var i = 0; i <= 125; i++) {
+    for (var i = 0; i <= 187; i++) {
         prefix = i < 10 ? '00' : i < 100 ? "0" : "";
         if (i < 56) {
             page0 += "<img src='img/clientes/" + prefix + i + ".svg' class='marcas'>";
         } else if (i < 112) {
             page1 += "<img src='img/clientes/" + prefix + i + ".svg' class='marcas'>";
+        } else if (i < 168) {
+            page2 +=  "<img src='img/clientes/" + prefix + i + ".svg' class='marcas'>";
         } else {
-            page2 += "<img src='img/clientes/" + prefix + i + ".svg' class='marcas'>";
+            page3 += "<img src='img/clientes/" + prefix + i + ".svg' class='marcas'>";
         }
     }
 }
